@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFInal.Views.TareasMain"
+             xmlns:viewModel="clr-namespace:ProyectoFInal.ViewModels"
+             x:DataType="viewModel:TareasMainViewModel"
+             xmlns:models="clr-namespace:ProyectoFInal.Models"
+             Title="Tareas Registradas">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10,0,10,0">
+            <Button Text="Agregar Tareas" HorizontalOptions="Start" Command="{Binding goToAddTareasFormCommand}"/>
+
+            <Grid Margin="5,5"  RowDefinitions="Auto" ColumnDefinitions="*,*">
+                <Label Text="Descripción " FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0"/>
+                <Label Text="Estatus" FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="1"/>
+            </Grid>
+            <CollectionView ItemsSource="{Binding TareasCollection}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Tareas">
+                        <Grid RowSpacing="0" RowDefinitions="5,Auto" ColumnDefinitions="*,*" VerticalOptions="FillAndExpand">
+                            <Label Text="{Binding Descripcion}" Grid.Row="1" Grid.Column="0" />
+                            <Label Text="{Binding Estatus}" Grid.Row="1" Grid.Column="1" />
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModel:TareasMainViewModel}},Path=SelectTareasCommand}" CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

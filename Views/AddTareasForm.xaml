@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFInal.Views.AddTareasForm"
+             xmlns:viewModel="clr-namespace:ProyectoFInal.ViewModels"
+             x:DataType="viewModel:TareasFormViewModel"
+             Title="Ingresar Tareas">
+
+
+    <VerticalStackLayout Padding="30,0,30,0" Spacing="5" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+        <Label Text="Descripción de la Tarea: "/>
+        <Entry Text="{Binding DescripcionProperty}" Keyboard="Text" Placeholder="Ingrese la descripción de la tarea"/>
+        <Label Text="Estatus de Tarea: (Valores permitidos: Por Hacer, En Proceso, Finalizada) "/>
+        <Entry Text="{Binding EstatusProperty}" Keyboard="Text" Placeholder="Ingrese la descripción de la tarea"/>
+
+
+        <Button Text="Guardar Tarea" Command="{Binding AddUpdateCommand}" />
+    </VerticalStackLayout>
+</ContentPage>
