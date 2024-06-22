@@ -82,7 +82,7 @@ namespace ProyectoFInal.ViewModels
                 Alerta("ADVERTENCIA", "Ingrese la descripción de la tarea");
                 return false;
             }
-            else if (tareas.Estatus== null || tareas.Estatus=="" || tareas.Estatus!="En Progreso" && tareas.Estatus!="Finalizada" && tareas.Estatus != "Por Hacer") 
+            else if (tareas.Estatus== null || tareas.Estatus=="" || tareas.Estatus!="En Proceso" && tareas.Estatus!="Finalizada" && tareas.Estatus != "Por Hacer") 
                 {
                 Alerta("ADVERTENCIA", "Ingrese un estatus aceptable");
                 return false;
