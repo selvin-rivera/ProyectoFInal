@@ -9,7 +9,7 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="10,0,10,0">
-            <Button Text="Agregar Tareas" HorizontalOptions="Start" Command="{Binding goToAddTareasFormCommand}"/>
+            <Button Text="Agregar Tareas" HorizontalOptions="Start" Command="{Binding goToAddTareasFormCommand}" Background="Violet"/>
 
             <Grid Margin="5,5"  RowDefinitions="Auto" ColumnDefinitions="*,*">
                 <Label Text="Descripción " FontAttributes="Bold" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="0"/>
