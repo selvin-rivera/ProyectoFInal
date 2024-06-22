@@ -14,6 +14,6 @@
         <Entry Text="{Binding EstatusProperty}" Keyboard="Text" Placeholder="Ingrese la descripción de la tarea"/>
 
 
-        <Button Text="Guardar Tarea" Command="{Binding AddUpdateCommand}" />
+        <Button Text="Guardar Tarea" Command="{Binding AddUpdateCommand}" Background="Green" />
     </VerticalStackLayout>
 </ContentPage>
